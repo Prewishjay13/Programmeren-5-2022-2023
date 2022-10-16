@@ -1,66 +1,51 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
-
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Beveiliging
+• Inloggen: bepaalde functionaliteit is afgeschermd voor alleen ingelogde gebruikers, maakt 
+niet uit welke gebruiker, als je maar bent ingelogd als rol ‘gebruiker’
+• Validatie: bij invoervelden wordt gebruik gemaakt van verplichte velden, en/of velden met 
+controle op inhoud (denk aan een postcode of emailadres), gebruiker krijgt foutmeldingen 
+te zien (deze zijn NIET te omzeilen door bijv. javascript uit te zetten…)
+• Verschillende rollen (dus meerdere soorten gebruikers), bijvoorbeeld
+• Admin rol
+• Gebruiker rol
+• Verschillende rechten
+• Admin gedeelte alleen toegankelijk voor ingelogde admin
+• Gebruiker heeft eigen afgeschermde deel waarin hij zijn gegevens kan aanpassen. 
+• Bij het aanmaken van een nieuw item (bijv. een schaakpuzzel) mag alleen de uploader het 
+item wijzigen. Een andere gebruik kan hier niet bij (door er bijvoorbeeld naar te dieplinken).
+• Zoeken & Filteren
+• Vrije tekst: zoekveld met vrije tekst, zoekt in meerdere kolommen (bijvoorbeeld in naam 
+en ‘bericht’), hoeft niet in het hele systeem te zoeken, mag ook voor een specifieke lijst met 
+data (bijv. nieuwsberichten).
+• filtermogelijkheid: dmv dropdownlist. Bijvoorbeeld alle nieuwsberichten van categorie 1 
+of 2 zien
+• combinatie van zoeken EN filteren, of filteren op meerdere categorieën levert een extra 
+punt op
+• Beveiliging
+o OWASP top 10
+ Schakelen van status met button in lijst
+bijvoorbeeld aan/uit, actief/niet actief
+o MOET via een post
+o MOET naar aparte action in 
+een controller
+o mag ook via Ajax
+Diepere validatie: 
+Voer voor een actie naar keuze 
+een extra validatie toe, waarbij de gebruiker deze actie pas mag uitvoeren nadat hij iets 
+anders een x aantal keer heeft gedaan. (licht dit toe in je assessment)
+a. Bijvoorbeeld bij een forum:
+een gebruiker mag pas een topic openen als hij minimaal 5 reacties heeft gegeven.
+b. Bijvoorbeeld bij review systeem:
+een gebruiker mag een review plaatsen als hij minimaal op 5 verschillende dagen is 
+ingelogd.
+3. Voorbeeldvragen
+• specifieke oplossingen vanuit jouw framework (ken je ze, waarom evt niet gekozen?)
+• bijvoorbeeld: hoe gaat je framework om met beveiliging?
+• bijvoorbeeld: hoe gaat je framework om met databases?
+• bijvoorbeeld: aan welke eisen moet een ‘live’ server voldoen?
+• bijvoorbeeld: toelichten waarom je iets niet volgens de richtlijn hebt gedaan.
+• algemene MVC vragen (ken je ze, en hoe zit dat in jouw framework)
+• bijvoorbeeld: wat zijn layouts/partials, en hoe zit dat in jouw framework?
+• bijvoorbeeld: wat is de taak van een controller?
+• bijvoorbeeld: wat is een sql injection, en hoe beveilig je hiertegen?
+• specifieke vragen m.b.t. hoe je iets hebt gebouwd (technisch in je code)
+• bijvoorbeeld: hoe heb je verschillende rollen geïmplementeerd
